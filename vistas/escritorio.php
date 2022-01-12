@@ -88,12 +88,12 @@ if ($_SESSION['escritorio']==1) {
       <h4 style="font-size: 17px;">
         <strong>S/. <?php echo $totalv; ?> </strong>
       </h4>
-      <p>Ventas</p>
+      <p>Envíos</p>
     </div>
     <div class="icon">
       <i class="ion ion-bag"></i>
     </div>
-    <a href="venta.php" class="small-box-footer">Ventas <i class="fa fa-arrow-circle-right"></i></a>
+    <a href="venta.php" class="small-box-footer">Envíos <i class="fa fa-arrow-circle-right"></i></a>
   </div>
 </div>
 </div>
@@ -111,7 +111,7 @@ if ($_SESSION['escritorio']==1) {
 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
   <div class="box box-primary">
     <div class="box-header with-border">
-      Ventas de los ultimos 12 meses
+      Envíos de los ultimos 12 meses
     </div>
     <div class="box-body">
       <canvas id="ventas" width="400" height="300"></canvas>
