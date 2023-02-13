@@ -15,6 +15,7 @@ $cargo=isset($_POST["cargo"])? limpiarCadena($_POST["cargo"]):"";
 $login=isset($_POST["login"])? limpiarCadena($_POST["login"]):"";
 $clave=isset($_POST["clave"])? limpiarCadena($_POST["clave"]):"";
 $imagen=isset($_POST["imagen"])? limpiarCadena($_POST["imagen"]):"";
+$title = isset($_POST["title"])? limpiarCadena($_POST["title"]):"";
 
 switch ($_GET["op"]) {
 	case 'guardaryeditar':
@@ -56,7 +57,58 @@ switch ($_GET["op"]) {
 	echo json_encode($rspta);
 	break;
 
-	case 'listar':
+	case 'editar_user':
+		$id_user = $_POST["id_user"];
+		$name_user = $_POST["name_user"];
+
+		$email=$_POST["email"];
+		$gender = $_POST["gender"];
+
+
+	$rspta=$usuario->busca_id_existente_user($id_user);
+
+	if(is_array($rspta)){
+		$ejecuta=$usuario-> editar_user($id_user,$name_user, $email, $gender);
+		
+		echo json_encode("SE ACTUALIZO EL USUARIO");
+
+	}else{
+	//	echo $user_id;
+	    $ejecuta=$usuario->crear_user_apis($id_user,$name_user, $email, $gender);
+		//echo "LA CONSULTA devuelve: ".$ejecuta;
+		echo json_encode("USUARIO INGRESADO CORRECTAMENTE");
+	}
+	
+
+	break;
+
+	case 'editar_comentario':
+		$title = $_POST["title"];
+		$body = $_POST["body"];
+
+		$idusuario_api=$_POST["id"];
+		$user_id = $_POST["user_id"];
+
+
+	$rspta=$usuario->busca_id_existente($idusuario_api,$title, $body);
+
+	if(is_array($rspta)){
+		$ejecuta=$usuario->editar_comentario($idusuario_api,$title, $body);
+		
+		echo json_encode("SE ACTUALIZO EL REGISTRO");
+
+	}else{
+	//	echo $user_id;
+	    $ejecuta=$usuario->crear_comentario($idusuario_api,$user_id,$title, $body);
+		//echo "LA CONSULTA devuelve: ".$ejecuta;
+		echo json_encode("REGISTRO INGRESADO CORRECTAMENTE");
+	}
+	
+
+	break;
+
+
+	/* case 'listar':
 	$rspta=$usuario->listar();
 	$data=Array();
 
@@ -81,7 +133,7 @@ switch ($_GET["op"]) {
              "aaData"=>$data); 
 	echo json_encode($results);
 	break;
-
+ */
 	case 'permisos':
 			//obtenemos toodos los permisos de la tabla permisos
 	require_once "../modelos/Permiso.php";

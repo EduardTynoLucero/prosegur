@@ -26,14 +26,13 @@ if ($_SESSION['acceso']==1) {
 <!--box-header-->
 <!--centro-->
 <div class="panel-body table-responsive" id="listadoregistros">
-  <table id="tbllistado" class="table table-striped table-bordered table-condensed table-hover">
+  <table id="tblistado_coments" class="table table-striped table-bordered table-condensed table-hover">
     <thead>
  
       <th>ID</th>
-      <th>NAME</th>
-      <th>EMAIL</th>
-      <th>GENDER</th>
-      <th>STATUS</th>
+      <th>USER ID</th>
+      <th>TITLE</th>
+      <th>BODY</th>
       <th>ACCION</th>
    
      
@@ -44,30 +43,29 @@ if ($_SESSION['acceso']==1) {
   </table>
 </div>
 
-<!--Modal para CRUD-->
-<div id="modalCRUD1" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+  <!--Modal para CRUD-->
+  <div id="modalCRUD" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel"></h5>                
                 </div>
-                <form id="formUser">    
+                <form id="formComentarios">    
                     <div class="modal-body">                
                             <input id="id" hidden>
 
                  
 
-                            <label for="" class="col-form-label">ID:</label>
-                            <input type="text" class="form-control" id="id1">
+                            <label for="" class="col-form-label">User ID:</label>
+                            <input type="text" class="form-control" id="user_id">
 
 
-                            <label for="" class="col-form-label">NAME:</label>
-                            <input type="text" class="form-control" id="name_user">
+                            <label for="" class="col-form-label">title:</label>
+                            <input type="text" class="form-control" id="title">
                         
-                            <label for="" class="col-form-label">EMAIL</label>
-                            <input id="email" type="text"  class="form-control">
-                            <label for="" class="col-form-label">GENDER</label>
-                            <input id="gender" type="text"  class="form-control">
+                            <label for="" class="col-form-label">body</label>
+                            <input id="body" type="text"  class="form-control">
                         
                                                          
                     </div>

@@ -89,110 +89,30 @@ if (strlen(session_id())<1)
       <ul class="sidebar-menu" data-widget="tree">
 
 <br>
-       <?php 
-if ($_SESSION['escritorio']==1) {
-  echo ' <li><a href="escritorio.php"><i class="fa  fa-dashboard (alias)"></i> <span>Escritorio</span></a>
-        </li>';
-}
-        ?>
-               <?php 
-if ($_SESSION['almacen']==1) {
-  echo ' <li class="treeview">
-          <a href="#">
-            <i class="fa fa-laptop"></i> <span>Almacen</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="articulo.php"><i class="fa fa-circle-o"></i> Articulos</a></li>
-            <li><a href="categoria.php"><i class="fa fa-circle-o"></i> Categorias</a></li>
-          </ul>
-        </li>';
-}
-        ?>
-               <?php 
-if ($_SESSION['compras']==1) {
-  echo ' <li class="treeview">
-          <a href="#">
-            <i class="fa fa-th"></i> <span>Compras</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="ingreso.php"><i class="fa fa-circle-o"></i> Ingresos</a></li>
-            <li><a href="proveedor.php"><i class="fa fa-circle-o"></i> Proveedores</a></li>
-          </ul>
-        </li>';
-}
-        ?>
+      
+              
+              
         
-               <?php 
-if ($_SESSION['ventas']==1) {
-  echo '<li class="treeview">
-          <a href="#">
-            <i class="fa fa-shopping-cart"></i> <span>Envíos</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="venta.php"><i class="fa fa-circle-o"></i> Envíos</a></li>
-            <li><a href="cliente.php"><i class="fa fa-circle-o"></i> Destinatarios</a></li>
-          </ul>
-        </li>';
-}
-        ?>
+              
 
                              <?php 
 if ($_SESSION['acceso']==1) {
   echo '  <li class="treeview">
           <a href="#">
-            <i class="fa fa-folder"></i> <span>Acceso</span>
+            <i class="fa fa-folder"></i> <span>USUARIOS</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="usuario.php"><i class="fa fa-circle-o"></i> Usuarios</a></li>
-            <li><a href="permiso.php"><i class="fa fa-circle-o"></i> Permisos</a></li>
-          </ul>
-        </li>';
-}
-        ?>  
-                                     <?php 
-if ($_SESSION['consultac']==1) {
-  echo '     <li class="treeview">
-          <a href="#">
-            <i class="fa fa-bar-chart"></i> <span>Consulta Compras</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="comprasfecha.php"><i class="fa fa-circle-o"></i>Compras por fechas</a></li>
+            <li><a href="usuario.php"><i class="fa fa-circle-o"></i> Usuarios GET</a></li>
+            <li><a href="usuario_post.php"><i class="fa fa-circle-o"></i> Usuarios POST </a></li>
           </ul>
         </li>';
 }
         ?>  
               
-                                                <?php 
-if ($_SESSION['consultav']==1) {
-  echo '<li class="treeview">
-          <a href="#">
-            <i class="fa fa-bar-chart"></i> <span>Consulta Envíos</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="ventasfechacliente.php"><i class="fa fa-circle-o"></i> Consulta Envíos</a></li>
-
-          </ul>
-        </li>';
-}
-        ?>     
+                                                
             
         
 

@@ -48,6 +48,62 @@ public function editar($idusuario,$nombre,$tipo_documento,$num_documento,$direcc
 	 }
 	 return $sw;
 }
+
+
+///////////////////////////////////
+
+public function busca_id_existente_user($idusuario){
+
+
+	$sql = "SELECT * FROM usuario_api WHERE id = '$idusuario' ";
+	//echo $idusuario;
+	return  ejecutarConsultaSimpleFila($sql);
+}
+
+
+
+public function busca_id_existente($idusuario,$title, $body){
+
+
+	$sql = "SELECT * FROM usuario_comentario_api WHERE id_coment = '$idusuario' ";
+	//echo $idusuario;
+	return  ejecutarConsultaSimpleFila($sql);
+}
+
+public function editar_comentario($idusuario,$title, $body){
+
+		
+	$sql=" UPDATE usuario_comentario_api SET  title='$title',body='$body' 
+	WHERE id_coment='$idusuario'";
+	ejecutarConsulta($sql);
+}
+
+public function editar_user($iduser,$name_user, $email, $gender){
+
+		
+	$sql=" UPDATE usuario_api SET  name ='$name_user', email ='$email', gender ='$gender' 
+	WHERE id='$iduser'";
+	ejecutarConsulta($sql);
+}
+
+
+public function crear_comentario($idusuario,$user_id, $title, $body){
+
+		
+	$sql=" INSERT INTO usuario_comentario_api (id_coment, user_id,title, body) VALUES($idusuario, $user_id,'$title', '$body'); "; 
+	ejecutarConsulta($sql);
+}
+
+public function crear_user_apis($iduser,$name_user, $email, $gender){
+
+		
+	$sql=" INSERT INTO usuario_api (id, name,email, gender) VALUES($iduser, '$name_user','$email', '$gender'); "; 
+	ejecutarConsulta($sql);
+}
+
+
+
+////////////////////////////////////////////////
 public function desactivar($idusuario){
 	$sql="UPDATE usuario SET condicion='0' WHERE idusuario='$idusuario'";
 	return ejecutarConsulta($sql);
